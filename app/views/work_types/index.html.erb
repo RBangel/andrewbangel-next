@@ -1,0 +1,11 @@
+<% unless @worktypes.nil? %>
+	<ul id="worktypes">
+		<% @worktypes.each do |wt| %>
+			<li><%= wt.name %>
+			 | <%= link_to "delete", wt, method: :delete, data: { confirm: "You sure?" } %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= link_to "New Work Type", work_types_new_path %>

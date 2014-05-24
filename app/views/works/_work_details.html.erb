@@ -1,0 +1,14 @@
+<%= f.label :work_type %>
+<%= f.collection_select :work_type_id, WorkType.all, :id, :name %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :url %>
+<%= f.text_field :url %>
+
+<%= f.label :thumbnail %>
+<%= f.text_field :thumbnail %>
+
+<%= f.label :date_created %>
+<%= f.text_field :date_created %>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<!-- Uncomment to make IE8 render like IE7 -->
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Andrew Bangel | <%= yield(:page_title) %></title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "vendor/custom.modernizr" %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="header">
+		<div id="title-block">
+			<h1>Andrew Bangel</h1>
+			<h2>Character Animator</h2>
+		</div>
+		<div id="main-menu">
+			<ul class="nav">
+			<li><a href="/demoreel/">Demo Reel</a></li>
+			<li><%= link_to 'Works', works_path %></li>
+			<li><a href="/recentactivity/">Recent Activity</a></li>
+			<li><a href="/resume/">Resumé</a></li>
+			<li><a href="/contact/">Contact</a></li>
+			</ul>
+		</div>
+  </div>
+  <div id="content">
+		<%= yield %>
+	</div>
+	<div id="footer">
+	</div>
+  <div id="modals">
+		<%= yield :modals %>
+	</div>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+</body>
+</html>

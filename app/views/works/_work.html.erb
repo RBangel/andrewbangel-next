@@ -1,0 +1,11 @@
+<li class="cell">
+	<%= link_to "#", :'data-reveal-id' => "#{work.id}Modal" do %>
+		<img src="<%= work.thumbnail %>">
+		<br />
+		<p class="title"><%= work.title %>
+			(<%= link_to "edit", edit_work_path(work) %>
+			 | <%= link_to "delete", work, method: :delete, data: { confirm: "You sure?" } %>
+			)
+		</p>
+	<% end %>
+</li>

@@ -1,0 +1,5 @@
+<%= form_for(@work) do |f| %>
+	<%= render partial: 'work_details', locals: {f: f} %>
+
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>

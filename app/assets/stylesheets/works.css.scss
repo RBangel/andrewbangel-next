@@ -1,0 +1,19 @@
+// Place all the styles related to the Works controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#works {
+  ul.row {
+    @include grid-row;
+    @include inline-list;
+  }
+
+  li.cell {
+    $column-gutter: em-calc(0);
+    @include grid-column(3)
+  }
+
+  .title {
+    text-align: center;
+  }
+}
